@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  web:
+    container_name: froggy-time
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/td7-froggy-time
+    command: bash -c "bin/setup && rails server -b 0.0.0.0 -p 3000 -d"
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    environment:
+      TZ: Sao_Paulo/Sao_Paulo

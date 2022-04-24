@@ -1,0 +1,18 @@
+<% if @frogs.empty? %>
+  <span> Não há nenhum sapo ainda </span>
+
+<% else %>
+  <% @frogs.each do |frog| %>
+    <div class='frog'>
+      <h3> <%= frog.name %> </h3>
+      <span> <%= frog.scientific_name %> </span>
+      <span> <%= frog.age %> years </span>
+
+      <span> 
+      Is this frog on sale?
+      <%= frog.on_sale? ? 'Yes' : 'No' %> 
+      </span>
+      
+    </div>
+    <% end %>
+<% end %>
