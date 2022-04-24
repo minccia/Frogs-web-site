@@ -1,5 +1,5 @@
 <% if @frogs.empty? %>
-  <span> Não há nenhum sapo ainda </span>
+  <span> There are no frogs yet </span>
 
 <% else %>
   <% @frogs.each do |frog| %>
@@ -12,7 +12,7 @@
       Is this frog on sale?
       <%= frog.on_sale? ? 'Yes' : 'No' %> 
       </span>
-      
+
     </div>
     <% end %>
 <% end %>
