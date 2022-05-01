@@ -1,0 +1,25 @@
+<%= form_with(model: @frog, url: '/frogs', method:'POST') do |f| %>
+ <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+ </div>
+
+  <div>
+    <%= f.label :scientific_name %>
+    <%= f.text_field :scientific_name %>
+ </div>
+
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+ </div>
+
+  <div>
+    <%= f.label :on_sale %>
+    <%= f.check_box :on_sale %>
+ </div>
+
+ <div>
+   <%= f.submit 'Submit'%>
+ </div>
+<% end %>
