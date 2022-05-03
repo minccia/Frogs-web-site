@@ -25,7 +25,7 @@ describe 'I have seen a frog!' do
 
     visit frog_path(target_frog)
 
-    expect(page).to have_content('This frog is above the average frogs age')
+    expect(page).to have_content("Frog's age is above the average frogs age")
   end
 
   it 'sucessfully' do 
@@ -42,7 +42,7 @@ describe 'I have seen a frog!' do
     
     expect(page).to have_content('Rebeca')
     expect(page).to have_content('Common frog')
-    expect(page).to have_content('5 anos')
+    expect(page).to have_content('5 years')
     expect(page).to have_content('Yes')
     end
   end
