@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Median frogs age' do 
-  it 'Even array length median is correct' do 
+  it 'Even array length with repeated numbers median is correct' do 
     Frog.create!(
       name: 'Peepaola',
       scientific_name: 'Not so rare frog',
@@ -33,7 +33,7 @@ describe 'Median frogs age' do
     expect(Frog.median_age).to eq(5)
   end 
 
-  it 'Odd array length median is correct' do 
+  it 'Odd array length with repeated numbers median is correct' do 
     Frog.create!(
         name: 'Peepaola',
         scientific_name: 'Not so rare frog',
@@ -58,7 +58,7 @@ describe 'Median frogs age' do
     expect(Frog.median_age).to eq(4)
   end
   
-  it 'Even array length median is correct' do 
+  it 'Even array length with different numbers median is correct' do 
     Frog.create!(
         name: 'Peepaola',
         scientific_name: 'Not so rare frog',
@@ -87,6 +87,31 @@ describe 'Median frogs age' do
         on_sale: true
       )
 
-      expect(Frog.median_age).to eq(5)
+    expect(Frog.median_age).to eq(5)
+  end
+
+  it 'Odd array length with different numbers median is correct' do 
+    Frog.create!(
+        name: 'Peepaola',
+        scientific_name: 'Not so rare frog',
+        age: 4,
+        on_sale: true
+      )
+  
+      Frog.create!(
+        name: 'Paulo',
+        scientific_name: 'Very rare frog',
+        age: 5,
+        on_sale: true
+      )
+  
+      Frog.create!(
+        name: 'Holanda Chinês',
+        scientific_name: 'Poisonous frog',
+        age: 6,
+        on_sale: true
+      )
+    
+    expect(Frog.median_age).to eq(5)
   end
 end
