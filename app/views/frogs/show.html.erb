@@ -8,5 +8,5 @@
 </div>
 
 <div>
-  <%= link_to "Delete frog", "#{@frog.id}", method: :delete %>
+  <%= button_to "Delete frog", frog_path(@frog), method: :delete %>
 </div>
