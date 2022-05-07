@@ -19,11 +19,20 @@ class FrogsController < ApplicationController
     redirect_to(new_frog_path)
   end
 
+  def destroy
+    @frog = Frog.find(params[:id])
+    @frog.destroy 
+    
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Frog was removed!' }
+    end
+  end 
+
   private 
   def new_frog_params
     params.permit(
       :name, :scientific_name,
-      :age, :on_sale
+      :age, :on_sale, :description
     )
   end
 end

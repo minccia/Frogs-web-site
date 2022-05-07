@@ -3,5 +3,10 @@
   <p> <%= @frog.scientific_name %> </span>
   <p> <%= @frog.age %> years </span>
   <p> <%= @frog.above_or_average_age %> </p>
+  <p> <%= @frog.description %> </p>
   <p> <%= @frog.on_sale? ? 'Yes' : 'No' %> </span>
+</div>
+
+<div>
+  <%= link_to "Delete frog", "#{@frog.id}", method: :delete %>
 </div>

@@ -7,7 +7,9 @@
       <h3> <%= link_to frog.name, frog_path(frog) %> </h3>
       <p> Scientific name: <%= frog.scientific_name %> </p>
       <span> Age: <%= frog.age %> years </span>
+      <p> Description: <%= frog.description %> </p>
       <p> Is this frog on sale? <%= frog.on_sale? ? 'Yes' : 'No' %>  </p>
+      <%= link_to "Delete frog", frogs_path(@frog), method: :delete %> 
     </div>
     <% end %>
 <% end %>
