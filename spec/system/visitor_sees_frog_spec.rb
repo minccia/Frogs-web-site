@@ -16,7 +16,7 @@ describe 'I have seen a frog!' do
     chosen_frog = create(:frog)
 
     visit root_path
-    click_on 'Frog Gallery'
+    click_on (I18n.t('home.index.gallery'))
     click_on "#{chosen_frog.name}"
 
     expect(page).to have_content(chosen_frog.name)

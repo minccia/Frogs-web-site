@@ -1,10 +1,10 @@
 <h3> Froggy time! </h3>
 
-<p> A lot of frogs, for your family and friends to have fun with </p>
+<p> <%= t('.title') %> </p>
 
-<div id='home_page_image'>
+<div id='home_index_image'>
   <img src='https://svgsilh.com/svg/48498-4caf50.svg'>
 </div>
 
-<%= link_to 'Frog Gallery', frogs_path %>
-<%= link_to 'Create Frogs', new_frog_path %>
+<%= link_to t('.gallery'), frogs_path %>
+<%= link_to t('.create'), new_frog_path %>
