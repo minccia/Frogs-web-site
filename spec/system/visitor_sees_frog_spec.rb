@@ -2,47 +2,26 @@ require 'rails_helper'
 
 describe 'I have seen a frog!' do
   it 'sucessfully with its average age' do 
-      target_frog = Frog.create!(
-      name: 'Rebeca',
-      scientific_name: 'Common frog',
-      age: 5,
-      on_sale: true
-    )
+    
+    [2, 3].each do |age|
+      create(:frog, age:age)
+    end
 
-    Frog.create!(
-      name: 'Peepaola',
-      scientific_name: 'Not so rare frog',
-      age: 2,
-      on_sale: true
-    )
-
-    Frog.create!(
-      name: 'Ana Bolena',
-      scientific_name: 'Rare frog',
-      age: 3,
-      on_sale: true
-    )
-
+    target_frog = create(:frog, age:5)
     visit frog_path(target_frog)
-
     expect(page).to have_content("Frog's age is above the average frogs age")
   end
 
   it 'sucessfully' do 
-    Frog.create!(
-        name: 'Rebeca',
-        scientific_name: 'Common frog',
-        age: 5,
-        on_sale: true
-      )
+    chosen_frog = create(:frog)
 
     visit root_path
     click_on 'Frog Gallery'
-    click_on 'Rebeca'
-    
-    expect(page).to have_content('Rebeca')
-    expect(page).to have_content('Common frog')
-    expect(page).to have_content('5 years')
+    click_on "#{chosen_frog.name}"
+
+    expect(page).to have_content(chosen_frog.name)
+    expect(page).to have_content(chosen_frog.scientific_name)
+    expect(page).to have_content(chosen_frog.age)
     expect(page).to have_content('Yes')
-    end
   end
+end
