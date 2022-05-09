@@ -1,5 +1,19 @@
 ---
 en:
-  frogs:
-    index:
-      no_frogs: 'There are no frogs yet'
+  activerecord:
+    models:
+      frogs: 'Frogs'
+    
+    attributes:
+      frog:
+        name: 'Name:'
+        scientific_name: "Scientific name:"
+        age: "Age:"
+        on_sale: "On sale:"
+        description: "Description:"
+
+    frogs:
+      index:
+        title: 'A lot of frogs for your family and friends to play with'
+        no_frogs: 'There are no frogs yet'
+        frog_on_sale?: 'Is this frog on sale?'

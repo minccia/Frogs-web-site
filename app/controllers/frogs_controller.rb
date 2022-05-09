@@ -7,8 +7,7 @@ class FrogsController < ApplicationController
     @frog = Frog.find(params[:id])
   end
 
-  def new 
-  end
+  def new; end 
 
   def create 
     frog = Frog.new(new_frog_params)
@@ -17,6 +16,15 @@ class FrogsController < ApplicationController
       return
     end
     redirect_to(new_frog_path)
+  end
+
+  def update 
+    @frog = Frog.find(params[:id])
+    if @frog.update_attributes(params[:frog])
+      redirect_to action: :index 
+    else 
+      @frog = Frog.find(params[:id])
+    end
   end
 
   def destroy

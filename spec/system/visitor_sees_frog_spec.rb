@@ -9,6 +9,7 @@ describe 'I have seen a frog!' do
 
     target_frog = create(:frog, age:5)
     visit frog_path(target_frog)
+    
     expect(page).to have_content("Frog's age is above the average frogs age")
   end
 

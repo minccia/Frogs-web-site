@@ -1,10 +1,32 @@
 <div>
-  <h3> <%= @frog.name %> </h3>
-  <p> <%= @frog.scientific_name %> </span>
-  <p> <%= @frog.age %> years </span>
-  <p> <%= @frog.above_or_average_age %> </p>
-  <p> <%= @frog.description %> </p>
-  <p> <%= @frog.on_sale? ? 'Yes' : 'No' %> </span>
+  <h3>
+    <%= Frog.human_attribute_name(:name) %>
+    <%= @frog.name %>
+  </h3>
+
+  <p>
+    <%= Frog.human_attribute_name(:scientific_name) %> 
+    <%= @frog.scientific_name %>
+  </p>
+
+  <p> 
+    <%= Frog.human_attribute_name(:age) %>
+    <%= @frog.age %> <%= t('common.years_old', s: @frog.age > 1 ? 's' : '') %>
+  </p>
+
+  <p>
+    <%= @frog.above_or_average_age %>
+  </p>
+
+  <p>
+    <%= Frog.human_attribute_name(:description) %>
+    <%= @frog.description %>
+  </p>
+
+  <p>
+    <%= Frog.human_attribute_name(:on_sale) %>
+    <%= @frog.on_sale? ? 'Yes' : 'No' %>
+  </p>
 </div>
 
 <div>

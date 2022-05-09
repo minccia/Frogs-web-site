@@ -1,8 +1,8 @@
 class Frog < ApplicationRecord
   def self.median_age
-    ages = Frog.pluck(:age)
-    median = (ages.length - 1) / 2.0
-    (ages[median.floor] + ages[median.ceil]) / 2.0 
+    frogs_ages = Frog.pluck(:age)
+    median = (frogs_ages.length - 1) / 2.0
+    (frogs_ages[median.floor] + frogs_ages[median.ceil]) / 2.0 
   end
 
   def above_or_average_age
