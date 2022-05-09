@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe 'Median frogs age' do 
+  it 'Single frog' do 
+    target_frog = create(:frog)
+    
+    expect(Frog.median_age).to eq(target_frog.age)
+  end
+
   it 'Even array length with repeated numbers median is correct' do 
     [4, 4, 6, 5].each do |age|
       create(:frog, age:age)
