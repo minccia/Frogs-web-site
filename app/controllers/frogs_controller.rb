@@ -18,12 +18,16 @@ class FrogsController < ApplicationController
     redirect_to(new_frog_path)
   end
 
+  def edit 
+    @frog = Frog.find(params[:id])
+  end
+
   def update 
     @frog = Frog.find(params[:id])
-    if @frog.update_attributes(params[:frog])
-      redirect_to action: :index 
-    else 
-      @frog = Frog.find(params[:id])
+    if @frog.update!(new_frog_params)
+      redirect_to frog_path(@frog)
+    else  
+      render 'edit'
     end
   end
 

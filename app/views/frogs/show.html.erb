@@ -30,5 +30,6 @@
 </div>
 
 <div>
+  <%= link_to "Edit frog", "#{frog_path(@frog)}/edit" %>
   <%= button_to "Delete frog", frog_path(@frog), method: :delete %>
 </div>

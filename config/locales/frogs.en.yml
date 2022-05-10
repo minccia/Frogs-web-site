@@ -3,7 +3,7 @@ en:
   activerecord:
     models:
       frogs: 'Frogs'
-    
+
     attributes:
       frog:
         name: 'Name:'

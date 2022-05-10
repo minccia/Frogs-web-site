@@ -7,11 +7,11 @@ describe 'I edited a frog' do
     visit frog_path(@frog)
     click_on 'Edit frog'
 
-    fill_in 'name', with: 'Peepaola'
-    fill_in 'scientific_name', with: 'Sapus saposus'
-    fill_in 'age', with: 8
-    check 'on_sale'
-    fill_in 'description', with: 'Little description'
+    fill_in 'frog_name', with: 'Peepaola'
+    fill_in 'frog_scientific_name', with: 'Sapus saposus'
+    fill_in 'frog_age', with: 9
+    check 'frog_on_sale'
+    fill_in 'frog_description', with: 'Little description'
     click_on 'commit'
 
     expect(page).to have_content('Peepaola')
