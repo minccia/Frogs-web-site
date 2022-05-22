@@ -1,4 +1,4 @@
-<%= form_with(model: @frog, url: '/frogs', method:'POST') do |f| %>
+<%= form_for(:frog, url: '/frogs', method:'POST') do |f| %>
  <div>
     <%= f.label :name %>
     <%= f.text_field :name %>

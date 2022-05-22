@@ -5,10 +5,10 @@ describe 'Visitor creates frogs' do
     visit root_path
     click_on 'Create Frogs'
 
-    fill_in 'name', with: 'Peepaola'
-    fill_in 'scientific_name', with: 'Sapus venenosus'
-    fill_in 'age', with: 8
-    check 'on_sale'
+    fill_in 'frog_name', with: 'Peepaola'
+    fill_in 'frog_scientific_name', with: 'Sapus venenosus'
+    fill_in 'frog_age', with: 8
+    check 'frog_on_sale'
     click_on 'commit'
 
     expect(page).to have_content('Peepaola')

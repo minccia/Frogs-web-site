@@ -6,10 +6,9 @@ describe 'I edited a frog' do
 
     visit frog_path(@frog)
     click_on 'Edit frog'
-    byebug
     fill_in 'frog_name', with: 'Peepaola'
     fill_in 'frog_scientific_name', with: 'Sapus saposus'
-    fill_in 'frog_age', with: 9
+    fill_in 'frog_age', with: 8
     check 'frog_on_sale'
     fill_in 'frog_description', with: 'Little description'
     click_on 'commit'

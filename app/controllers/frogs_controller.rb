@@ -47,7 +47,7 @@ class FrogsController < ApplicationController
 
   private 
   def new_frog_params
-    params.permit(8
+    params.require(:frog).permit(
       :name, :scientific_name,
       :age, :on_sale, :description
     )
