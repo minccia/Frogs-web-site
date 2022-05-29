@@ -8,7 +8,7 @@ describe 'Visitor creates frogs' do
     fill_in 'frog_name', with: 'Peepaola'
     fill_in 'frog_scientific_name', with: 'Sapus venenosus'
     fill_in 'frog_age', with: 8
-    check 'frog_on_sale'
+    check 'frog_on_sale' 
     click_on 'commit'
 
     expect(page).to have_content('Peepaola')
