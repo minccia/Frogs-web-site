@@ -1,3 +1,11 @@
+<% @frog.errors.each do |error| %>
+ <p>
+   <%= error.full_message %>
+ </p>
+<% end %>
+
+<h2> <%= t('.title') %> </h2>
+
 <%= form_for(:frog, url: '/frogs', method:'POST') do |f| %>
  <div>
     <%= f.label :name %>

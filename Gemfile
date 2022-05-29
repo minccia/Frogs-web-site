@@ -9,10 +9,10 @@ ruby '2.7.0'
 gem 'activesupport'
 gem 'byebug'
 gem 'capybara', '~> 3.35.3'
+gem 'factory_bot_rails'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'rspec-rails', '~> 5.0.0'
 gem 'rubocop-rails', require: false
-gem 'factory_bot_rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

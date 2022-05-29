@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'I edited a frog' do 
-  it 'Successfully' do 
+describe 'I edited a frog' do
+  it 'Successfully' do
     @frog = create(:frog)
 
     visit frog_path(@frog)

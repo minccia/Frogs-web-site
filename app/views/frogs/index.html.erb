@@ -6,23 +6,23 @@
     <div class='frog'>
       <h3> <%= link_to frog.name, frog_path(frog) %> </h3>
       <p>
-        <%= Frog.human_attribute_name(:name) %>
+        <%= Frog.human_attribute_name(:name) %>:
         <%= frog.scientific_name %>
       </p>
 
       <p>
-        <%= Frog.human_attribute_name(:age) %>
+        <%= Frog.human_attribute_name(:age) %>:
         <%= frog.age %>
         <%= t('common.years_old', s: frog.age > 1 ? 's' : '') %>
       </p>
 
       <p>
-        <%= Frog.human_attribute_name(:description) %>
+        <%= Frog.human_attribute_name(:description) %>:
         <%= frog.description %>
       </p>
 
       <p>
-        <%= Frog.human_attribute_name(:on_sale) %>
+        <%= Frog.human_attribute_name(:on_sale) %>:
         <%= frog.on_sale? ? 'Yes' : 'No' %>
       </p>
     </div>

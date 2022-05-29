@@ -1,16 +1,16 @@
 <div>
   <h3>
-    <%= Frog.human_attribute_name(:name) %>
+    <%= Frog.human_attribute_name(:name) %>:
     <%= @frog.name %>
   </h3>
 
   <p>
-    <%= Frog.human_attribute_name(:scientific_name) %> 
+    <%= Frog.human_attribute_name(:scientific_name) %>:
     <%= @frog.scientific_name %>
   </p>
 
   <p> 
-    <%= Frog.human_attribute_name(:age) %>
+    <%= Frog.human_attribute_name(:age) %>:
     <%= @frog.age %> <%= t('common.years_old', s: @frog.age > 1 ? 's' : '') %>
   </p>
 
@@ -19,16 +19,16 @@
   </p>
 
   <p>
-    <%= Frog.human_attribute_name(:description) %>
+    <%= Frog.human_attribute_name(:description) %>:
     <%= @frog.description %>
   </p>
 
   <p>
-    <%= Frog.human_attribute_name(:on_sale) %>
-    <%= @frog.on_sale? ? 'Yes' : 'No' %>
+    <%= Frog.human_attribute_name(:on_sale) %>:
+    <%= @frog.on_sale? ? t('common.yes') : t('common.no') %>
   </p>
 </div>
-
+   
 <div>
   <%= link_to "Edit frog", "#{frog_path(@frog)}/edit" %>
   <%= button_to "Delete frog", frog_path(@frog), method: :delete %>

@@ -1,51 +1,49 @@
 class FrogsController < ApplicationController
-  def index 
+  def index
     @frogs = Frog.all
   end
 
-  def show 
+  def show
     @frog = Frog.find(params[:id])
   end
 
-  def new; end 
+  def new
+    @frog = Frog.new
+  end
 
-  def create 
-    frog = Frog.new(new_frog_params)
-    if frog.save
-      redirect_to(frog_path frog)
+  def create
+    @frog = Frog.new(new_frog_params)
+    if @frog.save
+      redirect_to(frog_path(@frog))
       return
     end
-    redirect_to(new_frog_path)
+    render :new
   end
 
   def destroy
     @frog = Frog.find(params[:id])
-    @frog.destroy 
-    
+    @frog.destroy
+
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Frog was removed!' }
     end
-  end 
+  end
 
-  def edit 
+  def edit
     @frog = Frog.find(params[:id])
   end
 
-  def update 
+  def update
     @frog = Frog.find(params[:id])
     if @frog.update(new_frog_params)
       redirect_to frog_path(@frog)
-    else  
+    else
       render 'edit'
     end
   end
-  # O problema não é no capybara, dei puts page.body e está tudo certo.
-  # Parece que o método update não está conseguindo salvar os novos dados
-  # do formulário no banco de dados.
-  # Também suspeito do método que está sendo utilizado no botão, mas no page.body
-  # está dando o correto (Patch)
 
-  private 
+  private
+
   def new_frog_params
     params.require(:frog).permit(
       :name, :scientific_name,
