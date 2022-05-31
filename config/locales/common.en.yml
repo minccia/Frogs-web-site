@@ -2,3 +2,5 @@
 en:
   common:
     years_old: "year%{s} old"
+    "yes" : "Yes"
+    "no" : "No"
